@@ -1,0 +1,9 @@
+.pmpromd-search-field-div .select2-container--classic .select2-search--inline .select2-search__field {
+    width: auto !important;
+}
+.pmpromd-search-field-div {
+    display: none;
+}
+.select2-selection.select2-selection--multiple .select2-search__field {
+    width: auto !important;
+}
