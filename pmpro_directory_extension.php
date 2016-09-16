@@ -3,7 +3,7 @@
 Plugin Name: PMPro Membership Directory Add-on (for BER Associates)
 Plugin URI: https://eighty20results.com/support/
 Description: Extending the PMPro Membership Directory (Adds skill & area search support)
-Version: 1.3
+Version: 1.4
 Author: Thomas Sjolshagen <thomas@eighty20results.com>
 Author URI: https://eighty20results.com/thomas-sjolshagen
 License: GPL2
@@ -479,12 +479,7 @@ add_action( 'admin_notices', 'pmproemd_isRHPresent' );
 
 function pmpremd_randomize_sort_order( $sql, $order_by_field, $order ) {
 
-	// order this by the record ID for the membership table.
-	$order_by_field = 'mu.id';
-
-	$sql = sprintf( "ORDER BY %s %s", $order_by_field, $order );
-
-	return $sql;
+	return "ORDER BY RAND()";
 }
 
-// add_filter( "pmpro_member_directory_set_order", 'pmpremd_randomize_sort_order', 10, 3 );
+add_filter( "pmpro_member_directory_set_order", 'pmpremd_randomize_sort_order', 10, 3 );
